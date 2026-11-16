@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d">
+<title id="t">Secure transactions</title><desc id="d">A shield and lock represent secure PIN-authorized payments.</desc>
+<style>
+.k{fill:#000000}.y{fill:#FFCC00}.w{fill:#FFFFFF}.c{fill:#263238}.s{fill:#40545C}.ln{fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.soft{fill:none;stroke:#D9DEE1;stroke-width:6;stroke-linecap:round}
+@keyframes secure-shield-breathe{0%,78%,100%{transform:scale(1)}86%{transform:scale(1.025)}92%{transform:scale(1)}}
+.secure-shield{transform-box:view-box;transform-origin:400px 300px;animation:secure-shield-breathe 5.6s ease-in-out infinite}
+@keyframes secure-check-pop{0%,80%,100%{transform:scale(1)}86%{transform:scale(1.14)}92%{transform:scale(1)}}
+.secure-check{transform-box:view-box;transform-origin:650px 410px;animation:secure-check-pop 5.6s ease-in-out 250ms infinite}
+@media(prefers-reduced-motion:reduce){.secure-shield,.secure-check{animation:none}}
+</style>
+
+<circle cx="400" cy="300" r="220" fill="#FFF4CC"/><g class="secure-shield"><path d="M400 75 585 145v140q0 145-185 230Q215 430 215 285V145Z" class="y" stroke="#000000" stroke-width="9"/>
+<path d="M400 135 525 183v100q0 100-125 165-125-65-125-165V183Z" class="w" stroke="#000000" stroke-width="7"/>
+<rect x="330" y="265" width="140" height="110" rx="18" class="c"/><path d="M360 265v-35a40 40 0 0 1 80 0v35" class="ln"/><circle cx="400" cy="315" r="12" class="y"/><path d="M400 327v22" class="ln"/></g>
+<circle cx="145" cy="175" r="48" class="w" stroke="#000000" stroke-width="6"/><path d="m124 176 15 16 30-36" fill="none" stroke="#FFCC00" stroke-width="11" stroke-linecap="round"/>
+<g class="secure-check"><circle cx="650" cy="410" r="55" class="w" stroke="#000000" stroke-width="6"/><path d="m625 410 18 18 36-43" fill="none" stroke="#FFCC00" stroke-width="12" stroke-linecap="round"/></g></svg>

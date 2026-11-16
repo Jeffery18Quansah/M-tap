@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d">
+<title id="t">Instant settlement</title><desc id="d">A merchant receives an instant mobile payment.</desc>
+<style>
+.k{fill:#000000}.y{fill:#FFCC00}.w{fill:#FFFFFF}.c{fill:#263238}.s{fill:#40545C}.ln{fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.soft{fill:none;stroke:#D9DEE1;stroke-width:6;stroke-linecap:round}
+@keyframes paid-badge-pop{0%,78%,100%{transform:scale(1)}84%{transform:scale(1.045)}90%{transform:scale(1)}}
+.paid-badge{transform-box:view-box;transform-origin:200px 131px;animation:paid-badge-pop 5.2s ease-in-out infinite}
+@keyframes merchant-phone-tilt{0%,80%,100%{transform:rotate(0)}85%{transform:rotate(-4deg)}90%{transform:rotate(0)}}
+.merchant-phone{transform-box:view-box;transform-origin:612px 390px;animation:merchant-phone-tilt 5.2s ease-in-out 350ms infinite}
+@media(prefers-reduced-motion:reduce){.paid-badge,.merchant-phone{animation:none}}
+</style>
+
+<ellipse cx="400" cy="530" rx="270" ry="22" fill="#E9ECEF"/><path d="M120 270h300v230H120z" fill="#FFF4CC" stroke="#000000" stroke-width="7"/><path d="M105 270h330l-32-90H140Z" class="y" stroke="#000000" stroke-width="7"/>
+<path d="M155 270v-85m55 85v-85m55 85v-85m55 85v-85m55 85v-85" class="ln"/><rect x="160" y="330" width="80" height="100" rx="8" class="w" stroke="#000000" stroke-width="6"/>
+<circle cx="540" cy="205" r="57" fill="#B96D5F" stroke="#000000" stroke-width="7"/><path d="M485 195q-5-75 64-73 48 3 50 57-42-23-75-5Z" class="c"/>
+<path d="M470 270q70-45 140 0l55 225H420Z" class="y" stroke="#000000" stroke-width="7"/><g class="merchant-phone"><rect x="570" y="325" width="85" height="130" rx="15" class="c" stroke="#000000" stroke-width="6" transform="rotate(10 612 390)"/></g>
+<circle cx="650" cy="120" r="58" class="y" stroke="#000000" stroke-width="7"/><text x="650" y="143" font-size="58" font-weight="700" text-anchor="middle" fill="#000000">₵</text>
+<g class="paid-badge"><rect x="95" y="100" width="210" height="62" rx="31" class="w" stroke="#000000" stroke-width="6"/><text x="200" y="140" font-size="22" font-weight="700" text-anchor="middle" fill="#000000">PAID INSTANTLY</text></g></svg>

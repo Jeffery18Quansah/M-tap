@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d">
+<title id="t">Financial overview</title><desc id="d">A compact settlement dashboard with balance, trend, and transaction rows.</desc>
+<style>.k{fill:#000000}.y{fill:#FFCC00}.w{fill:#FFFFFF}.c{fill:#263238}.s{fill:#40545C}.ln{fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.soft{fill:none;stroke:#D9DEE1;stroke-width:6;stroke-linecap:round}</style>
+
+<rect x="70" y="65" width="660" height="470" rx="26" class="w" stroke="#000000" stroke-width="7"/><path d="M70 95q0-30 30-30h600q30 0 30 30v80H70Z" class="c"/><text x="115" y="140" font-size="27" font-weight="700" fill="#FFFFFF">YOUR ACTIVITY</text>
+<rect x="115" y="210" width="245" height="120" rx="16" fill="#FFF4CC"/><text x="140" y="250" font-size="18" fill="#263238">TOTAL SETTLED</text><text x="140" y="300" font-size="40" font-weight="700" fill="#000000">₵ 8,420</text>
+<rect x="390" y="210" width="290" height="120" rx="16" fill="#F0F2F3"/><path d="M420 290 465 265 510 278 555 230 600 248 650 218" fill="none" stroke="#FFCC00" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="115" y="380" font-size="22" font-weight="700" fill="#000000">RECENT TRANSACTIONS</text>
+<circle cx="135" cy="420" r="10" class="y"/><path d="M170 420h220" class="soft"/><text x="655" y="427" text-anchor="end" font-size="18" fill="#263238">+₵120</text>
+<circle cx="135" cy="460" r="10" class="y"/><path d="M170 460h220" class="soft"/><text x="655" y="467" text-anchor="end" font-size="18" fill="#263238">+₵85</text>
+<circle cx="135" cy="500" r="10" class="y"/><path d="M170 500h220" class="soft"/><text x="655" y="507" text-anchor="end" font-size="18" fill="#263238">+₵240</text></svg>

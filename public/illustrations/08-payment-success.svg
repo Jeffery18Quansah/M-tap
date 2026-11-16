@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d">
+<title id="t">Payment success</title><desc id="d">A phone displays a clear successful payment confirmation.</desc>
+<style>.k{fill:#000000}.y{fill:#FFCC00}.w{fill:#FFFFFF}.c{fill:#263238}.s{fill:#40545C}.ln{fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.soft{fill:none;stroke:#D9DEE1;stroke-width:6;stroke-linecap:round}</style>
+
+<circle cx="400" cy="300" r="205" fill="#FFF4CC"/><rect x="270" y="65" width="260" height="465" rx="35" class="c"/><rect x="285" y="92" width="230" height="410" rx="22" class="w"/>
+<circle cx="400" cy="245" r="82" class="y"/><path d="m358 245 29 30 58-68" fill="none" stroke="#000000" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="400" y="385" text-anchor="middle" font-size="27" font-weight="700" fill="#000000">PAYMENT</text><text x="400" y="420" text-anchor="middle" font-size="27" font-weight="700" fill="#000000">SUCCESSFUL</text>
+<path d="m185 150 18-30 12 34 34 7-29 18 4 34-28-22-31 14 12-33-24-25Z" class="y"/><path d="m615 140 13-23 9 25 25 5-20 15 3 24-20-15-22 10 9-23-17-18Z" class="y"/>
+<circle cx="195" cy="390" r="12" class="y"/><circle cx="620" cy="365" r="10" class="y"/></svg>

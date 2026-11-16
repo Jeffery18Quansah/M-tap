@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-labelledby="t d">
+<title id="t">Easy activation</title><desc id="d">A person activates an M-Tap tag using a guided phone setup.</desc>
+<style>
+.k{fill:#000000}.y{fill:#FFCC00}.w{fill:#FFFFFF}.c{fill:#263238}.s{fill:#40545C}.ln{fill:none;stroke:#000000;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}.soft{fill:none;stroke:#D9DEE1;stroke-width:6;stroke-linecap:round}
+@keyframes setup-check-pop{0%,78%,100%{transform:scale(1)}84%{transform:scale(1.13)}90%{transform:scale(1)}}
+.setup-check{transform-box:view-box;transform-origin:440px 325px;animation:setup-check-pop 5.1s ease-in-out infinite}
+@keyframes setup-contactless-pulse{0%,80%,100%{opacity:.82}86%,92%{opacity:1}}
+.setup-contactless{animation:setup-contactless-pulse 5.1s ease-in-out 300ms infinite}
+@media(prefers-reduced-motion:reduce){.setup-check,.setup-contactless{animation:none}}
+</style>
+
+<rect x="330" y="55" width="220" height="455" rx="34" class="c"/><rect x="345" y="82" width="190" height="400" rx="22" class="w"/>
+<text x="440" y="150" text-anchor="middle" font-size="22" font-weight="700" fill="#000000">M-TAP SETUP</text><rect x="375" y="180" width="130" height="75" rx="12" fill="#FFF4CC"/><path d="M398 217h84m-42-25v50" class="ln"/>
+<g class="setup-check"><circle cx="440" cy="325" r="42" class="y"/><path d="m419 325 15 15 29-34" fill="none" stroke="#000000" stroke-width="8" stroke-linecap="round"/></g>
+<rect x="375" y="400" width="130" height="14" rx="7" fill="#E3E6E8"/><rect x="375" y="400" width="95" height="14" rx="7" class="y"/>
+<path d="M120 510q-20-130 20-225 30-70 90-48 52 20 40 75l-20 70 85 40-20 88Z" fill="#B96D5F" stroke="#000000" stroke-width="7"/><path d="M145 275q-5-90 65-93 65-2 72 65l-48-12-55 45Z" class="c"/>
+<g class="setup-contactless"><rect x="595" y="290" width="125" height="88" rx="18" class="y" stroke="#000000" stroke-width="7"/><path d="M620 335q36-40 74 0m-55 18q18-20 36 0" class="ln"/></g></svg>

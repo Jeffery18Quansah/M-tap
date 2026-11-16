@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colours */
+  --mtap-ink: #000000;
+  --mtap-ink-deep: #111111;
+  --mtap-yellow: #FFCC00;
+  --mtap-yellow-hover: #E6B800;
+  --mtap-mint: #18C99A;
+  --mtap-mint-soft: #E7F8F2;
+  --mtap-sky: #FFF4CC;
+  --mtap-lilac: #FFFBE8;
+
+  /* Neutral Colours (Section 4) */
+  --neutral-0: #FFFFFF;
+  --neutral-25: #FCFCFD;
+  --neutral-50: #F6F7F9;
+  --neutral-100: #ECEFF3;
+  --neutral-200: #D9DEE7;
+  --neutral-500: #737E8F;
+  --neutral-700: #3D4858;
+  --neutral-900: #151515;
+
+  /* Surfaces */
+  --surface-page: #FAFAF8;
+  --surface-soft: #F5F5F3;
+  --surface-card: #FFFFFF;
+
+  /* Semantic Colours */
+  --state-success: #159B72;
+  --state-success-soft: #E7F8F2;
+  --state-warning: #D98A16;
+  --state-warning-soft: #FFF5E3;
+  --state-danger: #D94B4B;
+  --state-danger-soft: #FFF0F0;
+  --state-info: #3977D5;
+  --state-info-soft: #EDF4FF;
+
+  /* Text & Borders */
+  --text-primary: #151515;
+  --text-secondary: #3D4858;
+  --text-muted: #737E8F;
+  --border-default: #D9DEE7;
+  --border-subtle: #ECEFF3;
+
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-control: 12px;
+  --radius-card: 18px;
+  --radius-panel: 24px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 12px 36px rgba(0, 0, 0, 0.07);
+  --shadow-floating: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+@theme {
+  --font-sans: var(--font-outfit), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-outfit: var(--font-outfit), system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --color-brand-ink: var(--mtap-ink);
+  --color-brand-ink-deep: var(--mtap-ink-deep);
+  --color-brand-yellow: var(--mtap-yellow);
+  --color-brand-yellow-hover: var(--mtap-yellow-hover);
+  --color-brand-mint: var(--mtap-mint);
+  --color-brand-mint-soft: var(--mtap-mint-soft);
+  --color-brand-sky: var(--mtap-sky);
+  --color-brand-lilac: var(--mtap-lilac);
+
+  --color-neutral-0: var(--neutral-0);
+  --color-neutral-25: var(--neutral-25);
+  --color-neutral-50: var(--neutral-50);
+  --color-neutral-100: var(--neutral-100);
+  --color-neutral-200: var(--neutral-200);
+  --color-neutral-500: var(--neutral-500);
+  --color-neutral-700: var(--neutral-700);
+  --color-neutral-900: var(--neutral-900);
+
+  --color-surface-page: var(--surface-page);
+  --color-surface-soft: var(--surface-soft);
+  --color-surface-card: var(--surface-card);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-border-default: var(--border-default);
+  --color-border-subtle: var(--border-subtle);
+
+  --color-state-success: var(--state-success);
+  --color-state-success-soft: var(--state-success-soft);
+  --color-state-warning: var(--state-warning);
+  --color-state-warning-soft: var(--state-warning-soft);
+  --color-state-danger: var(--state-danger);
+  --color-state-danger-soft: var(--state-danger-soft);
+  --color-state-info: var(--state-info);
+  --color-state-info-soft: var(--state-info-soft);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-control);
+  --radius-lg: var(--radius-card);
+  --radius-xl: var(--radius-panel);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-floating: var(--shadow-floating);
+}
+
+body {
+  background-color: var(--surface-page);
+  color: var(--text-primary);
+  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular numbers for OTP and codes */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes marketing-hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.marketing-hero-copy {
+  animation: marketing-hero-enter 650ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.marketing-hero-art {
+  animation: marketing-hero-enter 750ms cubic-bezier(0.2, 0.7, 0.2, 1) 100ms both;
+}
+
+@keyframes marketing-scroll-reveal {
+  from {
+    opacity: 0.45;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .marketing-scroll-reveal {
+    animation: marketing-scroll-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 0% entry 35%;
+  }
+}
+
+.marketing-reveal-card {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .marketing-reveal-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@keyframes marketing-callout-float {
+  0%, 78%, 100% {
+    transform: translateY(0);
+  }
+
+  83% {
+    transform: translateY(-5px);
+  }
+
+  88% {
+    transform: translateY(0);
+  }
+
+  93% {
+    transform: translateY(-2px);
+  }
+}
+
+.marketing-flow-callout {
+  animation: marketing-callout-float 5.4s ease-in-out 1s infinite;
+}
+
+@keyframes marketing-callout-check {
+  0%, 80%, 100% {
+    transform: scale(1);
+  }
+
+  85% {
+    transform: scale(1.2) rotate(-8deg);
+  }
+
+  90% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+.marketing-flow-check {
+  animation: marketing-callout-check 5.4s ease-in-out 1s infinite;
+}
+
+@keyframes activation-stage-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.activation-stage-enter {
+  animation: activation-stage-enter 220ms ease-out both;
+}
+
+@keyframes activation-artwork-enter {
+  from {
+    opacity: 0.65;
+    transform: scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.activation-artwork-enter {
+  animation: activation-artwork-enter 280ms ease-out both;
+}
+
+@keyframes activation-success-mark-enter {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.activation-success-mark {
+  animation: activation-success-mark-enter 360ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes activation-success-check-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.activation-success-check path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: activation-success-check-draw 420ms ease-out 180ms both;
+}
+
+@keyframes activation-success-ring-pulse {
+  from {
+    opacity: 0.65;
+    transform: scale(0.9);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1.55);
+  }
+}
+
+.activation-success-ring {
+  animation: activation-success-ring-pulse 700ms ease-out 160ms both;
+}
+
+:focus-visible {
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .marketing-hero-copy,
+  .marketing-hero-art {
+    animation: none;
+  }
+
+  .marketing-scroll-reveal {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+
+  .marketing-flow-callout,
+  .marketing-flow-check {
+    animation: none;
+  }
+}
