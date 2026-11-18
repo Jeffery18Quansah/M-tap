@@ -29,7 +29,7 @@ export const TagUidField: React.FC<TagUidFieldProps> = ({ uid }) => {
 
         {/* Monospace Formatted UID */}
         <span className="flex-1 font-mono text-[15px] sm:text-[16px] font-semibold text-brand-ink tracking-widest tabular-nums truncate">
-          {formattedUid || "04A3 8CF2 1968 80"}
+          {formattedUid}
         </span>
 
       </div>

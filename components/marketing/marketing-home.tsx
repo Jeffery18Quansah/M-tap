@@ -7,6 +7,7 @@ import {
   ArrowUpRight,
   Check,
   LockKeyhole,
+  Phone,
   Radio,
   Smartphone,
 } from "lucide-react";
@@ -43,7 +44,7 @@ export function MarketingHome() {
             href={activationUrl}
             className="inline-flex min-h-11 items-center gap-2 rounded-full bg-brand-yellow px-5 text-sm font-semibold text-black transition-colors hover:bg-brand-yellow-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
           >
-            Try the activation demo
+            Activate your tag
             <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
@@ -70,7 +71,7 @@ export function MarketingHome() {
                   href={activationUrl}
                   className="inline-flex min-h-[54px] items-center justify-center gap-3 rounded-full bg-black px-7 text-sm font-semibold text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
                 >
-                  Try the activation demo
+                  Activate your tag
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
                 <Link
@@ -249,7 +250,7 @@ export function MarketingHome() {
                 href={activationUrl}
                 className="mt-8 inline-flex min-h-12 items-center gap-3 rounded-full bg-brand-yellow px-6 text-sm font-semibold text-black transition-colors hover:bg-brand-yellow-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               >
-                Try the activation demo
+                Activate your tag
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
@@ -294,7 +295,7 @@ export function MarketingHome() {
                 href={activationUrl}
                 className="mt-8 inline-flex min-h-[54px] items-center gap-3 rounded-full bg-black px-7 text-sm font-semibold text-white transition-colors hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2"
               >
-                Try the activation demo
+                Activate your tag
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
@@ -318,7 +319,8 @@ export function MarketingHome() {
           <p className="max-w-[520px] text-center text-xs leading-5 text-neutral-500 sm:text-left">
             M-Tap. A simpler way to pay.
           </p>
-          <Link className="text-sm font-medium text-neutral-700 underline-offset-4 hover:text-black hover:underline" href="mailto:support@boronlabs.com">
+          <Link className="inline-flex items-center gap-2 text-sm font-medium text-neutral-700 underline-offset-4 hover:text-black hover:underline" href="tel:+233546007121">
+            <Phone className="h-4 w-4" aria-hidden="true" />
             Contact
           </Link>
         </div>

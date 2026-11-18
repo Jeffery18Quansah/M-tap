@@ -32,23 +32,23 @@ export const ActivationSuccess: React.FC<ActivationSuccessProps> = ({
           aria-hidden="true"
         />
         <span className="sr-only" role="status">
-          Demo setup complete.
+          Tag activation complete.
         </span>
       </div>
 
       <h2 className="text-[27px] font-semibold leading-tight tracking-[-0.035em] text-black sm:text-[30px]">
-        Demo setup complete
+        Tag activation complete
       </h2>
       <p className="mt-2 max-w-[380px] text-sm leading-6 text-neutral-600 sm:text-[15px]">
         Your tag is linked to the mobile money number below.
       </p>
 
       <section
-        aria-label="Demo details"
+        aria-label="Activation details"
         className="mt-6 w-full rounded-2xl border border-neutral-200 bg-white p-4 text-left shadow-sm sm:p-5"
       >
         <h3 className="mb-1 text-xs font-semibold uppercase tracking-[0.12em] text-neutral-500">
-          Demo details
+          Activation details
         </h3>
         <dl className="divide-y divide-neutral-100">
           <div className="flex items-center justify-between gap-4 py-3">
@@ -78,7 +78,7 @@ export const ActivationSuccess: React.FC<ActivationSuccessProps> = ({
       </section>
 
       <p className="mt-4 max-w-[430px] text-xs leading-5 text-neutral-500">
-        This is a simulation. No wallet was connected and no payment was made.
+        The tag is active and linked to the verified mobile money number.
       </p>
 
       <div className="mt-5 flex w-full flex-col gap-2 sm:flex-row">

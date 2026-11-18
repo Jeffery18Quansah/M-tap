@@ -17,7 +17,7 @@ export function validateTagUid(rawUid: string | null | undefined): ValidationRes
   if (!rawUid || typeof rawUid !== "string" || !rawUid.trim()) {
     return {
       success: false,
-      error: "Missing tag UID. Please scan a valid M-Tap QR code or select a sample tag.",
+      error: "Missing tag UID. Please scan a valid M-Tap QR code or use the test tag.",
     };
   }
 

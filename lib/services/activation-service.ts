@@ -1,6 +1,5 @@
 /**
  * Service contracts for M-Tap Flow 2 Activation
- * Decoupled interface so mock can be seamlessly swapped for live backend later.
  */
 
 export type ActivationStep =

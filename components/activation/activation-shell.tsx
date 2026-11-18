@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { ArrowLeft, ArrowRight, Radio } from "lucide-react";
+import { ArrowLeft, ArrowRight, Phone, Radio } from "lucide-react";
 import { MtapLogo } from "../brand/mtap-logo";
 import { Button } from "../ui/button";
 import { ActivationProgress } from "./activation-progress";
@@ -14,9 +14,9 @@ import { ActivationSuccess } from "./activation-success";
 import { ActivationError, ActivationErrorDetails } from "./activation-error";
 import { ActivationStep } from "@/lib/services/activation-service";
 import {
-  mockActivationService,
-  SAMPLE_TAGS,
-} from "@/lib/services/mock-activation-service";
+  liveActivationService,
+  TEST_TAG_UID,
+} from "@/lib/services/live-activation-service";
 import {
   validateTagUid,
   validatePhoneNumber,
@@ -29,11 +29,10 @@ export const ActivationShell: React.FC = () => {
   const urlUid = searchParams.get("uid") || "";
 
   const [step, setStep] = useState<ActivationStep>("tag-check");
-  const [uid] = useState<string>(() => urlUid || SAMPLE_TAGS.READY);
+  const [uid] = useState<string>(() => urlUid || TEST_TAG_UID);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [maskedPhoneNumber, setMaskedPhoneNumber] = useState("");
   const [otp, setOtp] = useState("");
-  const [demoCode, setDemoCode] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [phoneError, setPhoneError] = useState<string | undefined>();
   const [otpError, setOtpError] = useState<string | undefined>();
@@ -60,7 +59,7 @@ export const ActivationShell: React.FC = () => {
       return;
     }
 
-    const eligibility = await mockActivationService.checkTagEligibility(
+    const eligibility = await liveActivationService.checkTagEligibility(
       uidValidation.data!
     );
     setIsLoading(false);
@@ -82,7 +81,6 @@ export const ActivationShell: React.FC = () => {
 
   const handleRequestOtp = async () => {
     setPhoneError(undefined);
-    setDemoCode(null);
 
     const validation = validatePhoneNumber(phoneNumber);
     if (!validation.success) {
@@ -91,7 +89,7 @@ export const ActivationShell: React.FC = () => {
     }
 
     setIsLoading(true);
-    const response = await mockActivationService.requestOtp(
+    const response = await liveActivationService.requestOtp(
       uid,
       validation.data!.normalized
     );
@@ -110,7 +108,6 @@ export const ActivationShell: React.FC = () => {
     }
 
     setMaskedPhoneNumber(response.maskedPhone);
-    setDemoCode(response.demoCode || null);
     setOtp("");
     setStep("otp-verification");
   };
@@ -128,7 +125,7 @@ export const ActivationShell: React.FC = () => {
     setIsLoading(true);
     setStep("activating");
 
-    const response = await mockActivationService.verifyOtp(
+    const response = await liveActivationService.verifyOtp(
       uid,
       phoneNumber,
       codeToVerify
@@ -158,11 +155,10 @@ export const ActivationShell: React.FC = () => {
 
   const handleResendOtp = async () => {
     setIsLoading(true);
-    const response = await mockActivationService.resendOtp(uid, phoneNumber);
+    const response = await liveActivationService.resendOtp(uid, phoneNumber);
     setIsLoading(false);
 
     if (response.success) {
-      setDemoCode(response.demoCode || null);
       setOtp("");
       setOtpError(undefined);
     } else if (response.error) {
@@ -174,7 +170,6 @@ export const ActivationShell: React.FC = () => {
     setStep("tag-check");
     setPhoneNumber("");
     setOtp("");
-    setDemoCode(null);
     setOtpError(undefined);
     setPhoneError(undefined);
     setCurrentError(null);
@@ -209,8 +204,8 @@ export const ActivationShell: React.FC = () => {
             }
           : step === "activating"
             ? {
-                title: "Finishing the demo",
-                description: "Confirming your sample tag and number.",
+                title: "Finishing activation",
+                description: "Confirming your tag and mobile number.",
               }
             : undefined;
 
@@ -219,10 +214,11 @@ export const ActivationShell: React.FC = () => {
       <header className="z-10 flex h-16 shrink-0 items-center justify-between border-b border-neutral-100 bg-white px-5 sm:px-8 lg:px-10">
         <MtapLogo height={34} asLink href="/" />
         <a
-          href="mailto:support@boronlabs.com"
+          href="tel:+233546007121"
           className="inline-flex min-h-11 items-center px-2 text-sm font-medium text-neutral-700 transition-colors hover:text-black focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black"
         >
-          Support
+          <Phone className="mr-2 h-4 w-4" aria-hidden="true" />
+          <span>Support</span>
         </a>
       </header>
 
@@ -267,7 +263,7 @@ export const ActivationShell: React.FC = () => {
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Button>
                   <p className="text-xs leading-5 text-neutral-500">
-                    Demo only. No real tag or wallet is activated.
+                    A live verification request will be sent to the M-Tap backend.
                   </p>
                 </div>
               </div>
@@ -288,7 +284,7 @@ export const ActivationShell: React.FC = () => {
                   disabled={isLoading}
                 />
                 <p className="-mt-3 text-xs leading-5 text-neutral-500">
-                  Demo only. No SMS will be sent.
+                  Requesting a code may send an SMS to this number.
                 </p>
 
                 <Button
@@ -299,7 +295,7 @@ export const ActivationShell: React.FC = () => {
                   onClick={handleRequestOtp}
                   className="rounded-[14px]"
                 >
-                  Request demo code
+                  Request verification code
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Button>
               </div>
@@ -322,18 +318,6 @@ export const ActivationShell: React.FC = () => {
                   disabled={isLoading}
                   error={otpError}
                 />
-
-                {demoCode && (
-                  <p className="rounded-xl border border-brand-yellow/60 bg-[#FFF9E5] px-4 py-3 text-center text-sm leading-6 text-neutral-700">
-                    Demo code:{" "}
-                    <span className="font-mono font-bold tracking-wider text-black">
-                      {demoCode}
-                    </span>
-                    <span className="block text-xs text-neutral-500">
-                      No SMS is sent in this simulation.
-                    </span>
-                  </p>
-                )}
 
                 {otpError && (
                   <p className="-mt-4 text-sm text-state-danger" role="alert">
@@ -365,7 +349,7 @@ export const ActivationShell: React.FC = () => {
                   <Radio className="h-7 w-7 animate-pulse" aria-hidden="true" />
                 </div>
                 <span className="sr-only">
-                  Finishing the demo. Confirming your sample tag and number.
+                  Finishing activation. Confirming your tag and mobile number.
                 </span>
               </div>
             )}
@@ -411,10 +395,6 @@ export const ActivationShell: React.FC = () => {
 
       <footer className="flex shrink-0 flex-col items-center justify-center gap-1 border-t border-neutral-100 bg-white px-5 py-3 text-xs text-neutral-500 sm:flex-row sm:gap-2">
         <MtapLogo height={20} asLink={false} />
-        <span className="hidden sm:inline" aria-hidden="true">
-          ·
-        </span>
-        <span>Demo experience. No real payment or wallet connection.</span>
       </footer>
     </div>
   );

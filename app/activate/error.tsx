@@ -25,7 +25,7 @@ export default function Error({
           Unable to load activation
         </h2>
         <p className="text-sm text-neutral-600 mb-6 leading-relaxed">
-          An unexpected simulation error occurred while initializing the activation session.
+          An unexpected error occurred while initializing the activation session.
         </p>
         <Button variant="primary" fullWidth onClick={() => reset()}>
           <RotateCcw className="w-4 h-4" />
